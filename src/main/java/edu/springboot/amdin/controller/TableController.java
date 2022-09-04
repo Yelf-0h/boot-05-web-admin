@@ -21,8 +21,20 @@ public class TableController {
     }
 
     @GetMapping("/dynamic_table")
-    public String dynamicTable(){
-
+    public String dynamicTable(HttpSession session){
+        User user1 = new User();
+        user1.setUserName("zhangsan");
+        user1.setPassword("123");
+        User user2 = new User();
+        user2.setUserName("lisi");
+        user2.setPassword("123");
+        User user3 = new User();
+        user3.setUserName("wangwu");
+        user3.setPassword("123");
+        User user4 = new User();
+        user4.setUserName("zhaoliu");
+        user4.setPassword("123");
+        session.setAttribute("users", Arrays.asList(user1,user2,user3,user4));
 
         return "table/dynamic_table";
     }
