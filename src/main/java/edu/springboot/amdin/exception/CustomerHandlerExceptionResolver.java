@@ -1,8 +1,5 @@
 package edu.springboot.amdin.exception;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
