@@ -17,10 +17,14 @@ import java.sql.SQLException;
  *
  * 自定义连接池Druid
  * 并设置Druid监控页面
+ *
+ * 导入druid的starter包即可自动配置
  * @author Yelf
  * @create 2022-09-05-16:46
  */
-@Configuration
+
+//@Configuration
+@Deprecated
 public class MyDataSourceConfig {
 
 
@@ -30,8 +34,9 @@ public class MyDataSourceConfig {
      * @return
      * @throws SQLException
      */
-    @ConfigurationProperties("spring.datasource")
-    @Bean
+
+//    @ConfigurationProperties("spring.datasource")
+//    @Bean
     public DataSource dataSource() throws SQLException {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setFilters("stat,wall");
@@ -43,7 +48,7 @@ public class MyDataSourceConfig {
      * 添加登录所需的账号密码，没添加就是不用登录
      * @return
      */
-    @Bean
+//    @Bean
     public ServletRegistrationBean statViewServlet(){
         StatViewServlet statViewServlet = new StatViewServlet();
         ServletRegistrationBean<StatViewServlet> statViewServletServletRegistrationBean = new ServletRegistrationBean<>(statViewServlet, "/druid/*");
@@ -56,7 +61,7 @@ public class MyDataSourceConfig {
      * 添加druid 的web监控 ，设置页面过滤器拦截所有，只排除资源文件
      * @return
      */
-    @Bean
+//    @Bean
     public FilterRegistrationBean DruidWebStatFilter(){
         WebStatFilter webStatFilter = new WebStatFilter();
         FilterRegistrationBean<WebStatFilter> webStatFilterFilterRegistrationBean = new FilterRegistrationBean<>(webStatFilter);
