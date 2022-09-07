@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.springboot.admin.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="edu.springboot.admin.pojo.User">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="uname" column="uname" jdbcType="VARCHAR"/>
+            <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="role" column="role" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getUserById" resultType="edu.springboot.admin.pojo.User">
+        select * from t_user where id = #{id}
+    </select>
+</mapper>

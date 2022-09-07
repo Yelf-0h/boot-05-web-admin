@@ -1,4 +1,11 @@
 spring:
+  redis:
+    url: redis://@tx.warframe.top:9538
+    client-type: jedis
+    jedis:
+      pool:
+        max-active: 10
+
   datasource:
     url: jdbc:mysql://localhost:3306/bookdb?serverTimezone=UTC
     username: root
@@ -33,5 +40,12 @@ spring:
             drop-table-allow: false
         slf4j:
           enabled: true
-mybatis:
-  mapper-locations: classpath:apper/*.xml
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml #配置mybatis映射文件的位置
+#  configuration:
+#    map-underscore-to-camel-case: true #开启_下划线转驼峰
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+

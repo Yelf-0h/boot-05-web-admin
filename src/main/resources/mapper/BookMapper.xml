@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.springboot.admin.mapper.BookMapper">
+
+    <resultMap id="BaseResultMap" type="edu.springboot.admin.pojo.Book">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="bookimg" column="bookImg" jdbcType="VARCHAR"/>
+            <result property="bookname" column="bookName" jdbcType="VARCHAR"/>
+            <result property="price" column="price" jdbcType="DOUBLE"/>
+            <result property="author" column="author" jdbcType="VARCHAR"/>
+            <result property="salecount" column="saleCount" jdbcType="INTEGER"/>
+            <result property="bookcount" column="bookCount" jdbcType="INTEGER"/>
+            <result property="bookstatus" column="bookStatus" jdbcType="INTEGER"/>
+    </resultMap>
+
+</mapper>
