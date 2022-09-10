@@ -10,7 +10,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 import java.util.Objects;
@@ -56,6 +59,11 @@ public class IndexController {
     public String sql(){
         Long result = jdbcTemplate.queryForObject("select count(*) from t_book", Long.class);
         String sql = "表格的条数是："+result;
+/*
+        此代码可以在任何地方获取到request，只要是同线程
+        HttpServletRequest request = ((ServletRequestAttributes) Objects
+                .requireNonNull(RequestContextHolder.getRequestAttributes()))
+                .getRequest();*/
         return sql;
     }
     @Autowired
