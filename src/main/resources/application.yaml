@@ -49,3 +49,20 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
 
+#将actuator监控端点默认都开启
+#然后将web的端点设为所有
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+#      自定义info信息，2.6以上版本无法读取配置中文件的信息，只能用配置类实现方法
+#info:
+#  appName: boot-admin
+#  version: 2.0.1
+#  mavenProjectName: @project.artifactId@  #使用@@可以获取maven的pom文件值
+#  mavenProjectVersion: @project.version@

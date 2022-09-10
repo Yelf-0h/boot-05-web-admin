@@ -3,6 +3,7 @@ package edu.springboot.admin;
 import edu.springboot.admin.mapper.BookMapper;
 import edu.springboot.admin.pojo.Book;
 import edu.springboot.admin.service.BookService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +13,6 @@ import org.springframework.data.redis.core.ValueOperations;
 
 
 @SpringBootTest
-
 class Boot05WebAdminApplicationTests {
 
     @Autowired
@@ -24,7 +24,8 @@ class Boot05WebAdminApplicationTests {
     @Autowired
     StringRedisTemplate redisTemplate;
 
-//    @Test
+    @Test
+    @Disabled
     void contextLoads() {
 //        Long result = jdbcTemplate.queryForObject("select count(*) from t_book", Long.class);
 //        log.info("数量是：{}",result);
